@@ -89,6 +89,11 @@ namespace calculator
                         var left = Validate(leftString);
                         var right = Validate(rightString);
 
+                        //Convert the mixed number to improper fractions
+                        left.ConvertMixedFractionToImproperFraction();
+                        right.ConvertMixedFractionToImproperFraction();
+
+
                         switch (_operator.ToString())
                         {
                             //perform multiplication 

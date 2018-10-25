@@ -8,10 +8,6 @@
             //multiply two fractions that may also be mixed fractions
             public static string Multiply(MixedFraction left, MixedFraction right)
             {
-                //Convert the mixed number to improper fractions
-                left.ConvertMixedFractionToImproperFraction();
-                right.ConvertMixedFractionToImproperFraction();
-
                 //multiply the fraction
                 var final = new MixedFraction()
                 {
@@ -26,10 +22,6 @@
             //Divide two fractions that may also be mixed fractions
             public static string Divide(MixedFraction left, MixedFraction right)
             {
-                //Convert the mixed number to improper fractions
-                left.ConvertMixedFractionToImproperFraction();
-                right.ConvertMixedFractionToImproperFraction();
-
                 //Divide the fraction
                 var final = new MixedFraction()
                 {
@@ -44,11 +36,7 @@
             //Add two fractions that may also be mixed fractions
             public static string Add(MixedFraction left, MixedFraction right)
             {
-                //Convert the mixed number to improper fractions
-                left.ConvertMixedFractionToImproperFraction();
-                right.ConvertMixedFractionToImproperFraction();
-
-                //Add the fraction a/b × c/d = ac/bd
+                //Add the fraction 
                 var final = new MixedFraction()
                 {
                     Numerator = (left.Numerator * right.Denominator) + (left.Denominator * right.Numerator),
@@ -62,10 +50,6 @@
             //Subtract two fractions that may also be mixed fractions
             public static string Subtract(MixedFraction left, MixedFraction right)
             {
-                //Convert the mixed number to improper fractions
-                left.ConvertMixedFractionToImproperFraction();
-                right.ConvertMixedFractionToImproperFraction();
-
                 //Subtract the fraction
                 var final = new MixedFraction()
                 {

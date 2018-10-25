@@ -418,5 +418,49 @@ namespace calculator_tests
             Assert.AreEqual("1/2", output);
         }
     }
-    
+
+    [TestClass]
+    public class ImproperInputs
+    {
+        [TestMethod]
+        [ExpectedException(typeof(Exception))]
+        public void DoubleOperator()
+        {
+            var input = "2 // 3";
+            var output = Program.CalculateOperations(input);
+
+            Debug.WriteLine(System.Reflection.MethodBase.GetCurrentMethod() + "  - " + output);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(Exception))]
+        public void Letter()
+        {
+            var input = "2 G 3";
+            var output = Program.CalculateOperations(input);
+
+            Debug.WriteLine(System.Reflection.MethodBase.GetCurrentMethod() + "  - " + output);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(Exception))]
+        public void NonDigit()
+        {
+            var input = "2 ? 3";
+            var output = Program.CalculateOperations(input);
+
+            Debug.WriteLine(System.Reflection.MethodBase.GetCurrentMethod() + "  - " + output);
+        }
+
+        [TestMethod]
+        public void ExtraSpaces()
+        {
+            var input = "2  * 3";
+            var output = Program.CalculateOperations(input);
+
+            Debug.WriteLine(System.Reflection.MethodBase.GetCurrentMethod() + "  - " + output);
+
+            Assert.AreEqual(output, "6");
+        }
+    }
 }
